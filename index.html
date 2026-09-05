@@ -2,293 +2,1242 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
-  <link rel="icon" href="https://img.hotimg.com/1ef97f5ba533d7bd7.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UR Frequency Team</title>
+    <title>Al-Rehman Fasteners | Nuts, Bolts & Nails Manufacturer</title>
     <style>
-     body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    color: white;
-    background: #000; /* Fallback color */
-    
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    animation: spaceAnimation 20s infinite alternate;
-    text-align: center;
-}
-
-        @keyframes spaceAnimation {
-            0% { background-size: 100%; }
-            50% { background-size: 110%; }
-            100% { background-size: 100%; }
-        }
- .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color:#333;
-      color: #fff;
-      position: relative;
-      z-index: 3; /* Ensure header stays on top */
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      font-size: 24px;
-      font-weight: bold;
-      animation: slideIn 2s ease-out;
-    }
-
-    .logo img {
-      width: 40px;
-      height: 40px;
-      margin-right: 10px;
-      animation: logoAnimation 2s ease-in-out;
-    }
-
-    .nav-menu {
-      position: absolute;
-      top: 60px; /* Adjust based on header height */
-      left: 0;
-      background-color: #333;
-      width: 100%;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease;
-      z-index: 3; /* Ensure the navigation menu appears above the container */
-    }
-
-    .nav-menu ul {
-      display: flex;
-      list-style: none;
-      flex-direction: column; /* Stack items vertically */
-      padding: 10px 20px;
-    }
-
-    .nav-menu ul li {
-      margin: 10px 0; /* Space between items */
-      opacity: 0; /* Initially hidden */
-      transform: translateX(-100%); /* Start from left */
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    .nav-menu.open {
-      max-height: 300px; /* Increased height for more items */
-    }
-
-    .nav-menu.open ul li {
-      opacity: 1; /* Fade in */
-      transform: translateX(0); /* Slide in */
-    }
-
-    .nav-menu ul li a {
-      color: white;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .nav-menu ul li a:hover {
-      color: #f4a261;
-    }
-
-    
-    .menu-icon {
-    display: block; /* Ensure it is block for smaller screens */
-    font-size: 30px;
-    cursor: pointer;
-    color: white; /* Make sure it's visible on a dark background */
-    z-index: 4; /* Ensure it's on top of other elements */
-}
-
-
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateY(-50%);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes logoAnimation {
-      from {
-        opacity: 0;
-        transform: scale(0.5);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-        h1 {
-            margin: 20px 0;
+        /* ========== RESET & BASE ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .team-container {
+        :root {
+            --primary: #0a1929;
+            --secondary: #1a3c6e;
+            --accent: #2e8b57;
+            --accent-light: #3cb371;
+            --dark: #111111;
+            --light: #f4f6f8;
+            --white: #ffffff;
+            --gray: #5c6b7a;
+            --border: #dde3e8;
+            --gradient: linear-gradient(135deg, #0a1929 0%, #1a3c6e 50%, #2e8b57 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: var(--light);
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* ========== TOP BAR ========== */
+        .top-bar {
+            background: var(--primary);
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .top-bar-container {
             display: flex;
+            justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-bar-left span {
+            margin-right: 20px;
+            opacity: 0.8;
+        }
+
+        .top-bar-right a {
+            margin-left: 20px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .top-bar-right a:hover {
+            opacity: 1;
+            color: var(--accent-light);
+        }
+
+        /* ========== HEADER ========== */
+        header {
+            background: var(--white);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
             justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--white);
+            letter-spacing: 1px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            font-size: 0.75rem;
+            color: var(--gray);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--dark);
+            transition: color 0.3s;
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        .nav-cta {
+            background: var(--accent);
+            color: var(--white) !important;
+            padding: 10px 22px !important;
+            border-radius: 4px;
+            font-weight: 600 !important;
+            border-bottom: none !important;
+            transition: background 0.3s;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-light);
+            color: var(--white) !important;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, rgba(46, 139, 87, 0.3) 0%, transparent 60%);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 80%, rgba(26, 60, 110, 0.4) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(46, 139, 87, 0.3);
+            border: 1px solid rgba(46, 139, 87, 0.5);
+            color: var(--accent-light);
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .hero h2 span {
+            color: var(--accent-light);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin-bottom: 35px;
+            opacity: 0.85;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
             gap: 20px;
-            padding: 20px;
+            flex-wrap: wrap;
         }
 
-        .team-member {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 15px;
-            width: 200px;
+        .btn {
+            padding: 15px 35px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            border: 2px solid transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(46, 139, 87, 0.4);
+        }
+
+        .btn-outline {
+            border-color: rgba(255, 255, 255, 0.5);
+            color: var(--white);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* ========== STATS BAR ========== */
+        .stats-bar {
+            background: var(--primary);
+            padding: 40px 0;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
             text-align: center;
-            transition: transform 0.3s;
         }
 
-        .team-member:hover {
-            transform: scale(1.05);
+        .stat-item h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            margin-bottom: 5px;
         }
 
-        .team-member img {
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
+        .stat-item p {
+            font-weight: 500;
+            color: var(--white);
+            opacity: 0.7;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* ========== SECTION STYLES ========== */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title .subtitle {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 600;
             margin-bottom: 10px;
         }
 
-        .team-member h3 {
-            margin: 10px 0 5px;
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 700;
         }
 
-        .team-member p {
-            margin: 0;
-            font-size: 14px;
+        .section-title p {
+            color: var(--gray);
+            max-width: 650px;
+            margin: 0 auto;
+            font-size: 1rem;
         }
-        
-        p {
-    text-align: justify;
-}
-  .container-text {
-            display:block;
+
+        .section-title .line {
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            margin: 20px auto 0;
+            border-radius: 3px;
+        }
+
+        /* ========== ABOUT ========== */
+        .about {
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
             align-items: center;
-            justify-content: flex-start;
-            margin: 20px;}
-            .footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-      margin-top: auto; /* Push footer to the bottom */
-    }
+        }
 
-   .footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-      margin-top: auto; /* Push footer to the bottom */
-    }
+        .about-text h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
 
-    .footer a {
-      color: #f4a261;
-      text-decoration: none;
-      margin: 0 10px;
-    }
+        .about-text p {
+            color: var(--gray);
+            margin-bottom: 18px;
+            font-size: 0.95rem;
+        }
+
+        .about-text ul {
+            list-style: none;
+            margin-top: 25px;
+        }
+
+        .about-text ul li {
+            padding: 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--dark);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .about-text ul li:last-child {
+            border-bottom: none;
+        }
+
+        .about-text ul li::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .about-visual {
+            background: var(--gradient);
+            border-radius: 12px;
+            padding: 50px 40px;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .about-visual h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .about-visual p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .about-visual .quality-standard {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            margin: 20px 0;
+        }
+
+        .about-visual .quality-text {
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+
+        /* ========== PRODUCTS ========== */
+        .products {
+            background: var(--light);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid var(--border);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent);
+        }
+
+        .product-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        .product-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 12px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .product-card p {
+            color: var(--gray);
+            font-size: 0.85rem;
+            line-height: 1.7;
+        }
+
+        /* ========== MATERIALS / SPECS ========== */
+        .materials {
+            background: var(--white);
+        }
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .material-card {
+            text-align: center;
+            padding: 35px 20px;
+            border-radius: 12px;
+            background: var(--light);
+            transition: all 0.3s;
+            border: 1px solid var(--border);
+        }
+
+        .material-card:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .material-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .material-card:hover h3 {
+            color: var(--accent-light);
+        }
+
+        .material-card p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        .material-card:hover p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* ========== INDUSTRIES SERVED ========== */
+        .industries {
+            background: var(--light);
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .industry-item {
+            background: var(--white);
+            padding: 25px 20px;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--secondary);
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .industry-item:hover {
+            background: var(--accent);
+            color: var(--white);
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* ========== CONTACT ========== */
+        .contact {
+            background: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .contact-info > p {
+            color: var(--gray);
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .contact-details {
+            margin-top: 25px;
+        }
+
+        .contact-details div {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 20px;
+        }
+
+        .contact-details .icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--white);
+            font-weight: 700;
+            flex-shrink: 0;
+            letter-spacing: 1px;
+        }
+
+        .contact-details .detail-label {
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--gray);
+            font-weight: 600;
+        }
+
+        .contact-details .detail-value {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+
+        .contact-form {
+            background: var(--light);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--accent);
+        }
+
+        .contact-form h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary);
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            transition: border 0.3s;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-group textarea {
+            height: 130px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            background: var(--accent);
+            color: var(--white);
+            padding: 15px 40px;
+            border-radius: 4px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-submit:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(46, 139, 87, 0.3);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 60px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--accent-light);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .footer-col p {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            opacity: 0.7;
+            font-size: 0.85rem;
+            transition: opacity 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            opacity: 1;
+            color: var(--accent-light);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 25px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            opacity: 0.6;
+            letter-spacing: 0.5px;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                gap: 15px;
+                padding: 20px 0;
+                text-align: center;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .top-bar-left span {
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
-     <header class="header">
-      
-    <div class="logo">
-      <img src="https://img.hotimg.com/UR-Frequency-Old-Logo.png" alt="UR-Frequency-Old-Logo" />
-      UR Frequency
-    </div>
-    <nav class="nav-menu">
-      <ul>
-        <li><a href="https://urmathematician.github.io/ur_frequency/">Home</a></li>
-          <li><a href="https://urmathematician.github.io/ur_frequency/carriers">Internships and Carrires</a></li>
-        <li><a href="">UR Industries</a></li>
-        <li><a href="https://urmathematician.github.io/urstore/">UR Store</a></li>
-        <li><a href="https://urmathematician.github.io/urtv/new">UR Automation </a></li>
-        <li><a href="https://urmathematician.github.io/ur_frequency/team">Our Team</a></li>
-        <li><a href="https://urmathematician.github.io/ur_frequency/contact">Contact Us</a></li>
-      </ul>
-    </nav>
-    <div class="menu-icon">&#9776;</div>
-  </header>
-  
-<img src="https://img.hotimg.com/UR-Frequency-Old-Logo.png" alt="UR-Frequency-Old-Logo.png" style="height: 100px; display: block; margin-left: auto; margin-right: auto;" />
-  
-  
-    <h1>Team of UR Frequency</h1>
-  <div class="container-text">
-    <p>
-        
-        At UR Frequency, our team is a passionate group of innovators dedicated to advancing the frontiers of space research and technology. With expertise spanning satellite design, communication systems, and orbital mechanics, we collaborate to create cutting-edge solutions for modern space exploration. Driven by curiosity and a commitment to excellence, we strive to turn ambitious ideas into groundbreaking realities, shaping the future of space science.
-        
-    </p>
-    </div>
-    <div class="team-container">
-    <a href="https://urmathematician.github.io/ubaid" target="_blank" style="text-decoration: none; color: white;">
-    <div class="team-member" style="background-color: #333; padding: 10px; margin: 5px;">
-        <img src="https://img.hotimg.com/uuuuuu.png" alt="Member 1">
-        <h3 style="color: white;">Ubaid UR Rehman</h3>
-        <p style="color: white;">Role: Owner, Scientist, Programmer, Researcher and Site engineer</p>
-    </div>
-</a>
-<a href="https://urmathematician.github.io/people/ceo.html" target="_blank" style="text-decoration: none; color: white;">
-    <div class="team-member" style="background-color: #333; padding: 10px; margin: 5px;">
-        <img src="https://i.pinimg.com/736x/6c/c0/7e/6cc07e8e61c1df4e01876a6c750bdef0.jpg" alt="Member 1">
-        <h3 style="color: white;">Laiba Momal</h3>
-        <p style="color: white;">Role: Researcher, Physics and CEO of UR Frequency</p>
-    </div>
-</a>
 
-<a href="" target="_blank" style="text-decoration: none; color: white;">
-    <div class="team-member" style="background-color: #333; padding: 10px; margin: 5px;">
-        <img src="" alt="Member 1">
-        <h3 style="color: white;">Muhmmad Haseeb</h3>
-        <p style="color: white;">Role: Astro Chemistry Researcher</p>
+    <!-- ========== TOP BAR ========== -->
+    <div class="top-bar">
+        <div class="container top-bar-container">
+            <div class="top-bar-left">
+                <span>Al-Rehman Fasteners</span>
+                <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="tel:+92XXXXXXXXXX">+92 XXX-XXXXXXX</a>
+                <a href="mailto:info@alrehmanfasteners.com">info@alrehmanfasteners.com</a>
+            </div>
+        </div>
     </div>
-</a>
 
-    <a href="" target="_blank" style="text-decoration: none; color: white;">
-    <div class="team-member" style="background-color: #333; padding: 10px; margin: 5px;">
-        <img src="" alt="Member 1">
-        <h3 style="color: white;">Asad UR Rehman</h3>
-        <p style="color: white;">Role: Supervisoer</p>
+    <!-- ========== HEADER ========== -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">AR</div>
+                <div class="logo-text">
+                    <h1>Al-Rehman Fasteners</h1>
+                    <span>Nuts | Bolts | Nails | Hardware</span>
+                </div>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#materials">Materials</a></li>
+                    <li><a href="#industries">Industries</a></li>
+                    <li><a href="#contact" class="nav-cta">Get Quote</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-badge">ISO Certified Manufacturing</div>
+            <h2>Al-Rehman <span>Fasteners</span></h2>
+            <p>Precision-engineered nuts, bolts, nails, and industrial fastening solutions for construction, manufacturing, and infrastructure projects.</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn btn-primary">View Products</a>
+                <a href="#contact" class="btn btn-outline">Request Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== STATS BAR ========== -->
+    <div class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>Product Variants</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Material Grades</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Quality Inspected</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Production Capability</p>
+                </div>
+            </div>
+        </div>
     </div>
-</a>
-<a href="" target="_blank" style="text-decoration: none; color: white;">
-    <div class="team-member" style="background-color: #333; padding: 10px; margin: 5px;">
-        <img src="" alt="Member 1">
-        <h3 style="color: white;">Shahid Nazir</h3>
-        <p style="color: white;">Role: Astro Islamic Researcher</p>
-    </div>
-</a>
-            </div>    </div>
-</body>
-<footer class="footer">
-    <p>&copy; 2024 UR Frequency. All rights reserved. Made by UR Mathematicain and Laiba Momal</p>
-    
-      Follow us on: 
- 
-      <a href="https://x.com/ur_frequency" target="_blank">Twitter</a> | 
-      <a href="https://www.instagram.com/ur._frequency/" target="_blank">Instagram</a>
-    </p>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <div class="subtitle">About Us</div>
+                <h2>Precision Fastener Manufacturing</h2>
+                <p>Al-Rehman Fasteners is a leading manufacturer and supplier of industrial-grade fastening solutions.</p>
+                <div class="line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Quality Manufacturing, Reliable Supply</h2>
+                    <p>Al-Rehman Fasteners specializes in the manufacturing of high-quality nuts, bolts, nails, screws, washers, and anchor fasteners. Our facility is equipped with modern machinery to ensure precision and consistency in every product.</p>
+                    <p>We serve a diverse range of industries including construction, infrastructure, automotive, furniture, and general manufacturing. Our commitment to quality and timely delivery has made us a trusted name in the fastener industry.</p>
+                    <ul>
+                        <li>Modern manufacturing facility with precision machinery</li>
+                        <li>Strict quality control at every production stage</li>
+                        <li>Wide range of standard and custom fasteners</li>
+                        <li>Competitive wholesale and bulk pricing</li>
+                        <li>Reliable logistics and timely delivery</li>
+                    </ul>
+                </div>
+                <div class="about-visual">
+                    <h3>Quality Commitment</h3>
+                    <p>Every batch inspected and tested before dispatch</p>
+                    <div class="quality-standard">100%</div>
+                    <div class="quality-text">Inspection Rate</div>
+                    <br>
+                    <p style="opacity: 0.7; font-size: 0.85rem;">Steel | Stainless Steel | Brass | High-Tensile</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PRODUCTS ========== -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-title">
+                <div class="subtitle">Our Products</div>
+                <h2>Fastener Product Range</h2>
+                <p>Comprehensive range of fastening solutions manufactured to international standards.</p>
+                <div class="line"></div>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-icon">NB</div>
+                    <h3>Nuts & Bolts</h3>
+                    <p>Hex bolts, carriage bolts, flange nuts, lock nuts, and custom sizes in various materials and grades.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">NL</div>
+                    <h3>Nails</h3>
+                    <p>Common nails, concrete nails, roofing nails, finishing nails, and specialty nails for all applications.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">SC</div>
+                    <h3>Screws</h3>
+                    <p>Wood screws, self-tapping screws, machine screws, drywall screws, and specialized thread designs.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">WR</div>
+                    <h3>Washers & Rivets</h3>
+                    <p>Flat washers, spring washers, lock washers, and blind rivets for industrial and commercial use.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">AF</div>
+                    <h3>Anchor Fasteners</h3>
+                    <p>Wedge anchors, sleeve anchors, drop-in anchors, and chemical anchors for heavy-duty applications.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">CM</div>
+                    <h3>Custom Manufacturing</h3>
+                    <p>Custom fasteners manufactured to your exact specifications, drawings, and material requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MATERIALS ========== -->
+    <section class="materials" id="materials">
+        <div class="container">
+            <div class="section-title">
+                <div class="subtitle">Materials</div>
+                <h2>Material Grades Available</h2>
+                <p>We manufacture fasteners in a wide range of materials to suit every application.</p>
+                <div class="line"></div>
+            </div>
+            <div class="materials-grid">
+                <div class="material-card">
+                    <h3>Carbon Steel</h3>
+                    <p>Grade 4.8, 8.8, 10.9, 12.9 for general purpose and high-strength applications.</p>
+                </div>
+                <div class="material-card">
+                    <h3>Stainless Steel</h3>
+                    <p>SS 304, SS 316, SS 410 for corrosion-resistant and food-grade applications.</p>
+                </div>
+                <div class="material-card">
+                    <h3>High-Tensile Steel</h3>
+                    <p>Heavy-duty fasteners for structural, automotive, and high-stress environments.</p>
+                </div>
+                <div class="material-card">
+                    <h3>Brass & Copper</h3>
+                    <p>Electrical conductivity, decorative applications, and non-magnetic requirements.</p>
+                </div>
+                <div class="material-card">
+                    <h3>Alloy Steel</h3>
+                    <p>Specialized alloys for extreme temperature and pressure conditions.</p>
+                </div>
+                <div class="material-card">
+                    <h3>Galvanized & Coated</h3>
+                    <p>Zinc-plated, hot-dip galvanized, and coated fasteners for outdoor durability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== INDUSTRIES SERVED ========== -->
+    <section class="industries" id="industries">
+        <div class="container">
+            <div class="section-title">
+                <div class="subtitle">Industries Served</div>
+                <h2>Trusted Across Sectors</h2>
+                <p>Our fasteners are used across a wide range of industries and applications.</p>
+                <div class="line"></div>
+            </div>
+            <div class="industries-grid">
+                <div class="industry-item">Construction</div>
+                <div class="industry-item">Infrastructure</div>
+                <div class="industry-item">Automotive</div>
+                <div class="industry-item">Furniture</div>
+                <div class="industry-item">Electrical</div>
+                <div class="industry-item">Plumbing</div>
+                <div class="industry-item">Agriculture</div>
+                <div class="industry-item">General Manufacturing</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <div class="subtitle">Contact Us</div>
+                <h2>Request a Quote</h2>
+                <p>Get in touch for product inquiries, bulk orders, or custom manufacturing requirements.</p>
+                <div class="line"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Reach out to us for product inquiries, bulk orders, or custom manufacturing requirements. Our team is ready to assist you.</p>
+                    <div class="contact-details">
+                        <div>
+                            <div class="icon">ADDR</div>
+                            <div>
+                                <div class="detail-label">Factory Address</div>
+                                <div class="detail-value">Your Business Address, City, Country</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="icon">PH</div>
+                            <div>
+                                <div class="detail-label">Phone</div>
+                                <div class="detail-value">+92 XXX-XXXXXXX</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="icon">EM</div>
+                            <div>
+                                <div class="detail-label">Email</div>
+                                <div class="detail-value">info@alrehmanfasteners.com</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="icon">HR</div>
+                            <div>
+                                <div class="detail-label">Business Hours</div>
+                                <div class="detail-value">Monday - Saturday: 9:00 AM - 7:00 PM</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send an Inquiry</h3>
+                    <form id="contactForm" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" placeholder="Enter your email address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="Enter your phone number">
+                        </div>
+                        <div class="form-group">
+                            <label for="product">Product Interest *</label>
+                            <select id="product" required>
+                                <option value="">Select a product category</option>
+                                <option value="nuts-bolts">Nuts & Bolts</option>
+                                <option value="nails">Nails</option>
+                                <option value="screws">Screws</option>
+                                <option value="washers-rivets">Washers & Rivets</option>
+                                <option value="anchor-fasteners">Anchor Fasteners</option>
+                                <option value="custom">Custom Manufacturing</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Requirements *</label>
+                            <textarea id="message" placeholder="Tell us about your requirements, sizes, quantities, and specifications..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Submit Inquiry</button>
+                    </form>
+                    <p id="formSuccess" style="display: none; text-align: center; margin-top: 15px; color: #2e8b57; font-weight: 600;">
+                        Your inquiry has been sent successfully. We will contact you shortly.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Al-Rehman Fasteners</h3>
+                    <p>Precision-engineered nuts, bolts, nails, and industrial fastening solutions for construction, manufacturing, and infrastructure.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#products">Nuts & Bolts</a></li>
+                        <li><a href="#products">Nails</a></li>
+                        <li><a href="#products">Screws</a></li>
+                        <li><a href="#products">Washers & Rivets</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p>Your Business Address, City, Country</p>
+                    <p>+92 XXX-XXXXXXX</p>
+                    <p>info@alrehmanfasteners.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Al-Rehman Fasteners. All Rights Reserved. | A UR Group Company</p>
+            </div>
+        </div>
     </footer>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+
+        // Contact form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const product = document.getElementById('product').value;
+            const message = document.getElementById('message').value;
+            
+            // Log form data (replace with backend integration)
+            console.log('Inquiry Submitted:', { name, email, phone, product, message });
+            
+            // Show success message
+            document.getElementById('formSuccess').style.display = 'block';
+            
+            // Reset form
+            document.getElementById('contactForm').reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                document.getElementById('formSuccess').style.display = 'none';
+            }, 5000);
+        }
+
+        // Smooth scroll for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
 </html>
-
-<script>
-    
-    document.querySelector('.menu-icon').addEventListener('click', function() {
-    document.querySelector('.nav-menu').classList.toggle('open');
-});
-
-    
-</script>
